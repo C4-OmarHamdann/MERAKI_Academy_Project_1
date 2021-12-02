@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #2d4059;
+}
+
+.logo h1 {
+  color: #ea5455;
+  text-align: center;
+  padding: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.timer {
+  font-size: 30px;
+
+  background-color: #f07b3f;
+  padding: 15px 25px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  left: 25%;
+}
+.move {
+  font-size: 30px;
+
+  background-color: #f07b3f;
+  padding: 15px 25px;
+
+  display: inline-block;
+  position: relative;
+  left: 55%;
+}
+.move span {
+  color: #000000;
+  background-color: #f07b3f;
+}
