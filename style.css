@@ -35,3 +35,24 @@
   color: #000000;
   background-color: #f07b3f;
 }
+
+.game {
+  background-color: #ea5455;
+  margin-top: 20px;
+  width: 800px;
+  height: 500px;
+  position: relative;
+  left: 20%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  gap: 10px;
+  padding-left: 20px;
+  grid-template-columns: repeat(3, 220px);
+}
+.card {
+  width: 130px;
+  height: 130px;
+  background-color: #f07b3f;
+}
