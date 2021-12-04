@@ -2,14 +2,43 @@ let cards = document.querySelectorAll(".card");
 let move = document.querySelector(".count");
 let image = document.querySelectorAll("img");
 let count = 0;
-
+let cardFlip = 0;
+let cardOne, cardTwo;
 //Add Click Listener to all card\\
 for (i = 0; i < cards.length; i++) {
   cards[i].addEventListener("click", function () {
+    cardFlip++;
     move.innerText = ++count;
+
     this.children[0].classList.add("show");
+
+    //Compare Two Card\\
+    if (cardFlip == 1) {
+      cardOne = this.children[0];
+    } else {
+      cardTwo = this.children[0];
+    }
+
+    if (cardFlip >= 2) {
+      compareCard(cardOne, cardTwo);
+      cardOne = "";
+      cardTwo = "";
+      cardFlip = 0;
+    }
   });
 }
+
+//Compare Card\\
+const compareCard = (cardOne, cardTwo) => {
+  if (cardOne.src == cardTwo.src) {
+  }
+  if (cardOne.src != cardTwo.src) {
+    setTimeout(() => {
+      cardOne.classList.remove("show");
+      cardTwo.classList.remove("show");
+    }, 500);
+  }
+};
 
 //Array images random\\
 
