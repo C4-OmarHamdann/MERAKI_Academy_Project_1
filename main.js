@@ -33,6 +33,7 @@ for (i = 0; i < cards.length; i++) {
 //Compare Card\\
 const compareCard = (cardOne, cardTwo) => {
   if (cardOne.src == cardTwo.src) {
+    numTimer += 20;
   }
   if (cardOne.src != cardTwo.src) {
     setTimeout(() => {
