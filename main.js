@@ -7,21 +7,7 @@ let count = 0;
 for (i = 0; i < cards.length; i++) {
   cards[i].addEventListener("click", function () {
     move.innerText = ++count;
-    this.children[0].classList.toggle("show");
-
-    //Timer\\
-
-    const timer = document.querySelector(".timer");
-    let numTimer = 10;
-
-    const startTimer = setInterval(() => {
-      timer.innerText = numTimer;
-      --numTimer;
-
-      if (numTimer == -1) {
-        clearInterval(startTimer);
-      }
-    }, 1000);
+    this.children[0].classList.add("show");
   });
 }
 
@@ -41,8 +27,25 @@ const imageArray = [
   "./images/0.jpg",
   "./images/4.jpg",
 ];
+//Random Image \\
+let newArray = [];
+for (let index = 0; index < 12; index++) {
+  let randomNum = Math.floor(Math.random() * imageArray.length);
+  newArray[index] = imageArray[randomNum];
+  imageArray.splice(randomNum, 1);
+  image[index].src = newArray[index];
+}
 
-imageArray.forEach((element, i) => {
-  let randomNum = Math.floor(Math.random() * 12);
-  image[i].src = element;
-});
+//Timer\\
+
+const timer = document.querySelector(".timer");
+let numTimer = 10;
+
+const startTimer = setInterval(() => {
+  timer.innerText = numTimer;
+  --numTimer;
+
+  if (numTimer == -1) {
+    clearInterval(startTimer);
+  }
+}, 1000);
