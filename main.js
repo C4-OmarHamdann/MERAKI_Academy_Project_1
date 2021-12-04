@@ -4,6 +4,7 @@ let image = document.querySelectorAll("img");
 let count = 0;
 let cardFlip = 0;
 let cardOne, cardTwo;
+let gameStarted = false;
 //Add Click Listener to all card\\
 for (i = 0; i < cards.length; i++) {
   cards[i].addEventListener("click", function () {
@@ -14,6 +15,7 @@ for (i = 0; i < cards.length; i++) {
 
     //Compare Two Card\\
     if (cardFlip == 1) {
+      startTimer(gameStarted);
       cardOne = this.children[0];
     } else {
       cardTwo = this.children[0];
@@ -70,11 +72,16 @@ for (let index = 0; index < 12; index++) {
 const timer = document.querySelector(".timer");
 let numTimer = 10;
 
-const startTimer = setInterval(() => {
-  timer.innerText = numTimer;
-  --numTimer;
+const startTimer = (started) => {
+  if (!started) {
+    gameStarted = true;
+    const gameTimer = setInterval(() => {
+      timer.innerText = numTimer;
+      --numTimer;
 
-  if (numTimer == -1) {
-    clearInterval(startTimer);
+      if (numTimer == -1) {
+        clearInterval(gameTimer);
+      }
+    }, 1000);
   }
-}, 1000);
+};
