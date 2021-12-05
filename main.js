@@ -1,3 +1,13 @@
+const game = document.querySelector(".game");
+//add card\\
+for (let index = 0; index < 12; index++) {
+  const div = document.createElement("div");
+  div.classList.add("card");
+  game.append(div);
+  const img = document.createElement("img");
+  div.append(img);
+}
+
 const cards = document.querySelectorAll(".card");
 const move = document.querySelector(".count");
 const image = document.querySelectorAll("img");
@@ -6,6 +16,7 @@ let count = 0;
 let cardFlip = 0;
 let cardOne, cardTwo;
 let gameStarted = false;
+
 //Add Click Listener to all card\\
 for (i = 0; i < cards.length; i++) {
   cards[i].addEventListener("click", function () {
