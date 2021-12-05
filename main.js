@@ -101,11 +101,15 @@ startButton.addEventListener("click", () => {
 });
 
 //Game Over\\
+const over = document.querySelector(".over");
 const result = () => {
-  const over = document.querySelector(".over");
   cards.forEach((element) => {
     element.style.display = "none";
   });
   over.style.display = "block";
   over.children[0].innerText = "Loss";
 };
+
+over.addEventListener("click", () => {
+  window.location.reload();
+});
