@@ -1,14 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap");
 * {
   padding: 0;
   margin: 0;
-  background-color: #2d4059;
+  font-family: "Fuzzy Bubbles", cursive;
 }
-
+html {
+  background-image: url(./images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
 .logo h1 {
   color: #ea5455;
   text-align: center;
   padding: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 80px;
+  text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc,
+    1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee,
+    4px 3px 1px #cccccc, 3px 4px 1px #eeeeee, 5px 4px 1px #cccccc,
+    4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee,
+    7px 6px 1px #cccccc, 2px 2px 2px rgba(206, 89, 55, 0);
 }
 .gameInfo {
   display: flex;
@@ -94,4 +106,16 @@ img {
   padding: 10%;
   cursor: pointer;
   display: none;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f07b3f;
+  color: #2a09bd;
+  text-align: center;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
 }
