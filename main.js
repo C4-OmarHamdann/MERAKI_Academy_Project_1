@@ -1,6 +1,7 @@
-let cards = document.querySelectorAll(".card");
-let move = document.querySelector(".count");
-let image = document.querySelectorAll("img");
+const cards = document.querySelectorAll(".card");
+const move = document.querySelector(".count");
+const image = document.querySelectorAll("img");
+
 let count = 0;
 let cardFlip = 0;
 let cardOne, cardTwo;
@@ -72,7 +73,7 @@ for (let index = 0; index < 12; index++) {
 //Timer\\
 
 const timer = document.querySelector(".timer");
-let numTimer = 10;
+let numTimer = 20;
 
 const startTimer = (started) => {
   if (!started) {
@@ -80,9 +81,13 @@ const startTimer = (started) => {
     const gameTimer = setInterval(() => {
       timer.innerText = numTimer;
       --numTimer;
-
-      if (numTimer < 0 || count >= 20) {
-        result();
+      const showArray = document.querySelectorAll(".show");
+      console.log(showArray.length);
+      if (showArray.length >= 12) {
+        win();
+        clearInterval(gameTimer);
+      } else if (numTimer < 0 || count >= 20) {
+        loss();
         clearInterval(gameTimer);
       }
     }, 1000);
@@ -101,15 +106,23 @@ startButton.addEventListener("click", () => {
 });
 
 //Game Over\\
+//loss\\
 const over = document.querySelector(".over");
-const result = () => {
+const loss = () => {
   cards.forEach((element) => {
     element.style.display = "none";
   });
   over.style.display = "block";
   over.children[0].innerText = "Loss";
 };
-
+//win\\
+const win = () => {
+  cards.forEach((element) => {
+    element.style.display = "none";
+  });
+  over.style.display = "block";
+};
+//play again\\
 over.addEventListener("click", () => {
   window.location.reload();
 });
