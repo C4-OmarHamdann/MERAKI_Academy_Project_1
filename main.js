@@ -11,7 +11,7 @@ for (let index = 0; index < 12; index++) {
 const cards = document.querySelectorAll(".card");
 const move = document.querySelector(".count");
 const image = document.querySelectorAll("img");
-
+/*golobel value */
 let count = 0;
 let cardFlip = 0;
 let cardOne, cardTwo;
@@ -92,18 +92,23 @@ const startTimer = (started) => {
     const gameTimer = setInterval(() => {
       timer.innerText = numTimer;
       --numTimer;
+      //woring timer
       if (numTimer < 5) {
         timer.style.color = "red";
         timer.style.fontSize = "50px";
         timer.style.fontweight = "bold";
       }
+      //woring move
       if (count >= 16) {
         move.style.color = "red";
       }
+      //win
       const showArray = document.querySelectorAll(".show");
       if (showArray.length >= 12) {
         win();
         clearInterval(gameTimer);
+
+        //loss
       } else if (numTimer < 0 || count >= 20) {
         loss();
         clearInterval(gameTimer);
