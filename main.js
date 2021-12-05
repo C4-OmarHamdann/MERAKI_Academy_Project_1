@@ -92,8 +92,15 @@ const startTimer = (started) => {
     const gameTimer = setInterval(() => {
       timer.innerText = numTimer;
       --numTimer;
+      if (numTimer < 5) {
+        timer.style.color = "red";
+        timer.style.fontSize = "50px";
+        timer.style.fontweight = "bold";
+      }
+      if (count >= 16) {
+        move.style.color = "red";
+      }
       const showArray = document.querySelectorAll(".show");
-      console.log(showArray.length);
       if (showArray.length >= 12) {
         win();
         clearInterval(gameTimer);
@@ -109,6 +116,7 @@ const startTimer = (started) => {
 
 const startButton = document.querySelector(".start");
 startButton.addEventListener("click", () => {
+  game.classList.add("game-cards");
   cards.forEach((element) => {
     element.style.display = "block";
   });
@@ -119,12 +127,15 @@ startButton.addEventListener("click", () => {
 //Game Over\\
 //loss\\
 const over = document.querySelector(".over");
+const again = document.querySelector(".play-again-button");
 const loss = () => {
   cards.forEach((element) => {
     element.style.display = "none";
   });
   over.style.display = "block";
   over.children[0].innerText = "Loss";
+  over.style.color = "red";
+  over.style.fontSize = "50px";
 };
 //win\\
 const win = () => {
@@ -134,6 +145,6 @@ const win = () => {
   over.style.display = "block";
 };
 //play again\\
-over.addEventListener("click", () => {
+again.addEventListener("click", () => {
   window.location.reload();
 });
