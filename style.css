@@ -58,6 +58,8 @@
   height: 130px;
   margin: 10px;
   background-color: #f07b3f;
+  visibility: hidden;
+  cursor: pointer;
 }
 
 img {
@@ -67,4 +69,29 @@ img {
 }
 .show {
   display: block;
+}
+
+.start {
+  height: 40%;
+  width: 40%;
+  position: absolute;
+  left: 30%;
+  top: 33.333%;
+
+  font-size: xx-large;
+  color: #f07b3f;
+  border-radius: 10%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.over {
+  color: #f07b3f;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+  cursor: pointer;
+  display: none;
 }

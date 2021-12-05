@@ -16,6 +16,7 @@ for (i = 0; i < cards.length; i++) {
     //Compare Two Card\\
     if (cardFlip == 1) {
       startTimer(gameStarted);
+
       cardOne = this.children[0];
     } else {
       cardTwo = this.children[0];
@@ -33,7 +34,7 @@ for (i = 0; i < cards.length; i++) {
 //Compare Card\\
 const compareCard = (cardOne, cardTwo) => {
   if (cardOne.src == cardTwo.src) {
-    numTimer += 20;
+    numTimer += 2;
   }
   if (cardOne.src != cardTwo.src) {
     setTimeout(() => {
@@ -80,9 +81,31 @@ const startTimer = (started) => {
       timer.innerText = numTimer;
       --numTimer;
 
-      if (numTimer == -1) {
+      if (numTimer < 0 || count >= 20) {
+        result();
         clearInterval(gameTimer);
       }
     }, 1000);
   }
+};
+
+//start game\\
+
+const startButton = document.querySelector(".start");
+startButton.addEventListener("click", () => {
+  cards.forEach((element) => {
+    element.style.visibility = "visible";
+  });
+
+  startButton.style.display = "none";
+});
+
+//Game Over\\
+const result = () => {
+  const over = document.querySelector(".over");
+  cards.forEach((element) => {
+    element.style.display = "none";
+  });
+  over.style.display = "block";
+  over.children[0].innerText = "Loss";
 };
