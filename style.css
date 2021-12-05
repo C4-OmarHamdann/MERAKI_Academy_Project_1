@@ -49,7 +49,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  align-items: center;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -58,7 +58,7 @@
   height: 130px;
   margin: 10px;
   background-color: #f07b3f;
-  visibility: hidden;
+  display: none;
   cursor: pointer;
 }
 
@@ -72,15 +72,14 @@ img {
 }
 
 .start {
-  height: 40%;
-  width: 40%;
-  position: absolute;
-  left: 30%;
-  top: 33.333%;
+  position: relative;
 
+  left: 25%;
+  height: 200px;
+  width: 50%;
   font-size: xx-large;
   color: #f07b3f;
-  border-radius: 10%;
+  border-radius: 25%;
   font-weight: bold;
   cursor: pointer;
 }

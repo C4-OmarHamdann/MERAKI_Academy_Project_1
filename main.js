@@ -110,7 +110,7 @@ const startTimer = (started) => {
 const startButton = document.querySelector(".start");
 startButton.addEventListener("click", () => {
   cards.forEach((element) => {
-    element.style.visibility = "visible";
+    element.style.display = "block";
   });
 
   startButton.style.display = "none";
